@@ -17,5 +17,6 @@
 ## Related: ABB_sentences_NLP.ipynb
     - Doc2vec similarity próba 3. 
     - File metadata összegyűjtés majd adatbázis építés
-
+    - Mongodb test 4M record ingyenesen elérhető
+    - speedtest 20db lekérdezés 15sec
 
