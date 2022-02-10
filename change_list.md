@@ -14,7 +14,7 @@
     - Doc2Vec(corpus_file=sentence_corpus_file,vector_size=200,epochs=60,dm=0)  dm=0 meglepően jó eredmények, még rövid keresőszavak esetén is
 
 # 20220210 20:33
-## Related: ABB_sentences_NLP.ipynb
+## Related: ABB_sentences_NLP.ipynb,mongotest.ipynb
     - Doc2vec similarity próba 3. 
     - File metadata összegyűjtés majd adatbázis építés
     - Mongodb test 4M record ingyenesen elérhető
