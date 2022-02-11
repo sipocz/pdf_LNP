@@ -20,3 +20,10 @@
     - Mongodb test 4M record ingyenesen elérhető
     - speedtest 20db lekérdezés 15sec
 
+
+# 20220211 19:03
+## Related: 
+    - c. 
+    - c
+    - c
+    - c
