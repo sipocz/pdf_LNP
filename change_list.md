@@ -22,8 +22,11 @@
 
 
 # 20220211 19:03
-## Related: 
-    - c. 
-    - c
-    - c
-    - c
+## Related: Corpus_generator.ipynb 
+    - corpus generator: metainfo kinyerés
+    - block alapú megközelítés --> rövid mondatokat eredményez! Nem jó, mert elveszik a kontextus. kombinálni kell a metainfó adatokkal (rectangle maximalization :-)
+
+# 20220212 10:33
+## Related: ABB_sentences_NLP.ipynp
+    - model mentés, visszatöltés -> a model tanítása és a felhasználása különválasztható
+    - git
