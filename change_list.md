@@ -27,9 +27,13 @@
     - block alapú megközelítés --> rövid mondatokat eredményez! Nem jó, mert elveszik a kontextus. kombinálni kell a metainfó adatokkal (rectangle maximalization :-)
 
 # 20220212 10:33
-## Related: ABB_sentences_NLP.ipynp
+## Related: Corpus_generator.ipynb 
     - model mentés, visszatöltés -> a model tanítása és a felhasználása különválasztható
     - git problémák eliminálása
-    - rectangle maximalization design 
+    - rectangle maximalization design :-) 
     - mongodb database configuration
-    - corpus_generator  
+    - corpus_generator / all_text_drawer:
+        kiválasztott pdf oldalon az eredmény bejelölése OK
+    - corpus_generator
+        mongodb connection  (teszt a linux-on)
+
