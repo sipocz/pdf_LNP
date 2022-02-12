@@ -20,3 +20,13 @@
     - Mongodb test 4M record ingyenesen elérhető
     - speedtest 20db lekérdezés 15sec
 
+
+# 20220211 19:03
+## Related: Corpus_generator.ipynb 
+    - corpus generator: metainfo kinyerés
+    - block alapú megközelítés --> rövid mondatokat eredményez! Nem jó, mert elveszik a kontextus. kombinálni kell a metainfó adatokkal (rectangle maximalization :-)
+
+# 20220212 10:33
+## Related: ABB_sentences_NLP.ipynp
+    - model mentés, visszatöltés -> a model tanítása és a felhasználása különválasztható
+    - git
