@@ -27,7 +27,7 @@
     - block alapú megközelítés --> rövid mondatokat eredményez! Nem jó, mert elveszik a kontextus. kombinálni kell a metainfó adatokkal (rectangle maximalization :-)
 
 # 20220212 10:33
-## Related: Corpus_generator.ipynb 
+## Related: több 
     - model mentés, visszatöltés -> a model tanítása és a felhasználása különválasztható
     - git problémák eliminálása
     - rectangle maximalization design :-) 
@@ -36,6 +36,15 @@
         kiválasztott pdf oldalon az eredmény bejelölése OK
     - corpus_generator
         mongodb connection  (teszt a linux-on)
-    - basic HTML design ok 
+    - basic HTML design
+        hibajavítás, szinek, css
+
+# 20220213 00:00
+## Related: több
+    -
+
+
+
+         
         
 
