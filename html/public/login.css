@@ -1,0 +1,181 @@
+/*alap színek*/
+:root{
+    --color1: #15756d;
+    --color2: #C1DEAE;
+    --color3: #F2F5C8;
+    --color4: #7c7c3d;
+}
+
+/*oldal alapja*/
+body{
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+/*az egész bejelentkező felület*/
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    background: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+/*bejelentkező felölet bal oldala (kép és felette a szöveg)*/
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column; 
+    background: var(--color1);
+
+}
+
+/*bal oldali bejelentkező rész szövege*/
+.left-login > h1{
+    padding: 20px;
+    font-size: 22px;
+    color: var(--color3)
+}
+
+/*bal oldali bejelentkező rész képe*/
+.left-login-image{
+    width: 35vw;
+}
+
+/*jobb oldali bejelentkező felület*/
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+/*jobb oldalon elhelyezkedő "kártya"*/
+.card-login{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    padding: 30px 35px;
+    background: rgba(0, 0, 0, 0.253);
+    border-radius: 30px;
+}
+
+/*jobb oldali kártya fő szövege*/
+.card-login > h1{
+    color: var(--color3);
+    font-weight: 800;
+    margin: 0;
+}
+
+/*jobb oldali kártya bejelentkezés gombja*/
+.card-login input[type="submit"]{
+    width: 100%;
+    padding: 16px;
+    margin: 25px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: black;
+    background: var(--color3);
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px rgba(253, 253, 253, 0.212);
+    text-align: center;
+}
+
+/*jobb oldali kártya bejelentkezés gombja ha rávisszük az egeret*/
+.card-login input[type="submit"]:hover{
+    width: 100%;
+    padding: 16px;
+    margin: 25px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: black;
+    background: var(--color2);
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px rgba(253, 253, 253, 0.212);
+    text-align: center;
+}
+
+/*jobb oldali beviteli mezők*/
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+/*jobb oldali beviteli mezők inputja*/
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: var(--color3);
+    color: black;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.027);
+    outline: none;
+    box-sizing: border-box;
+}
+
+/*jobb oldali beviteli mezők label-jei (felhasználónév, jelszó)*/
+.textfield > label{
+    color: var(--color3);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/*input mező placeholder-je*/
+.textfield > input::placeholder{
+    color: rgb(39, 39, 39);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*ha a képernyő mérete kisebb mint 850 pixel*/
+@media only screen and (max-width: 950px){
+    .card-login{
+        width: 85%;
+    }
+}
+
+/*ha a képernyő mérete kisebb mint 600 pixel*/
+@media only screen and (max-width: 600px){
+    .main-login{
+        flex-direction: column;
+    }
+    
+    .left-login{
+        display: none;
+    }
+
+    .card-login{
+        width: 100%;
+    }
+
+    .card-login input[type="submit"]{
+        letter-spacing: 0px;
+    }
+}
+
+
+

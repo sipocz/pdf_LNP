@@ -1,0 +1,275 @@
+/*mindenre vonatkozik*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    transition: all 350ms linear;
+}
+
+/*vilagos tema szinei*/
+body[data-theme="light"]{
+    --color-1: #FBF8F1; /*backgorund, search-input*/ 
+    --color-2: #E9DAC1; /*search-box, */
+    --color-3: #54BAB9; /*search-btn, table header, border-top, border-bottom*/
+    --color-4: white;
+    --color-5: rgb(49, 49, 49); 
+    --color-6: #dddddd; /*table inner border*/
+    --color-7: #F7ECDE; /*even table row, */
+    --color-8: #333333;
+}
+
+/*sotet tema szinei*/
+body[data-theme="dark"]{
+    --color-1: #1a1a1a; /*backgorund, search-input*/ 
+    --color-2: #423F3E; /*search-box, */
+    --color-3: #2B2B2B; /*search-btn, table header, border-top, border-bottom*/
+    --color-4: white;
+    --color-5: black; 
+    --color-6: #2B2B2B; /*table inner border*/
+    --color-7: #0f0f0f; /*even table row, */
+    --color-8: rgb(92, 255, 233);
+}
+
+.theme-switcher{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.checkbox{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.label{
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+    background-color: rgb(255, 255, 255);
+    border: 0.1px solid var(--color-5);
+    border-radius: 50px;
+    text-indent: -9999px;
+}
+
+.label::after{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #252130;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: .5s ease;
+}
+
+input:checked + label{
+    background-color: var(--color-5);
+}
+
+input:checked + label::after{
+    background-color: rgb(255, 255, 255);
+    left: calc(100% - 25px);
+}
+
+.bi-moon-stars{
+    color: transparent;
+}
+
+.bi-brightness-high{
+    color: transparent;
+}
+
+/*az oldal alapja*/
+body{
+    background: var(--color-1);
+}
+
+/*a képre vonatkozik (táblázat jobb szélső oszlopa)*/
+img{
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/*ha a képre visszük az egeret akkor mi törtéjen*/
+img:hover{
+    cursor: zoom-in;
+}
+
+/*a képre ha rákattintunk az egeret akkor mi történjen*/
+img:active {
+    overflow: hidden;
+    transition: transform .5s ease;
+    transform: scale(1.5);
+}
+
+/*a kereső dobozt körbevevő alakzat*/
+.wrapper{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:link{
+    color: var(--color-8);
+}
+
+/*kereső*/
+.search_box{
+    background: var(--color-2);
+    position: relative;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    width: 1000px;
+}
+
+/*kereső gombja*/
+.search_box .search_btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-4);
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/*kereső input mezeje*/
+.search_box .input_search{
+    outline: none;
+    border: 0;
+    background: var(--color-1);
+    color: var(--color-5);
+    padding: 15px 20px;
+    width: 1000px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+/*táblázatot alakítja*/
+.content-table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 1200px;
+}
+
+/*táblázat fejlécének sorait módosítja*/
+.content-table thead tr{
+    background-color: var(--color-3);
+    color: var(--color-4);
+    text-align: center;
+    font-weight: bold;
+}
+
+/*táblázat th és td értékeit módosítja*/
+.content-table th, .content-table td{
+    padding: 5px 10px;
+}
+
+/*azokat a td értékeket módosítja amelyiknek az osztálya btn (gomb)*/
+.content-table td[class="btn"]{
+    margin: 10px;
+    background-color: var(--color-3);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-4);
+    vertical-align: center;
+    text-align: center;
+}
+
+/*td-t módosítja*/
+td {
+    border: 1px solid var(--color-6);
+}
+
+/*azokat a td-ket módosítja amelyiknek az osztálya pic (kép)*/
+.content-table td[class="pic"]{
+    overflow: hidden;
+}
+
+/*azokat a td-ket módosítja, amelyiknek az osztálya link*/
+.content-table td[class="link"]{
+    max-width: 150px;
+    overflow: hidden;
+}
+
+/*a táblázat fő részében a tr-eket módosítja*/
+.content-table tbody tr{
+    border-bottom: 1px solid var(--color-6);
+}
+
+/*páratlan sorokat módosítja a táblázat fő részében*/
+.content-table tbody tr:nth-of-type(even){
+    background-color: var(--color-7);
+}
+
+/*utolsó sort módosítja a táblázat fő részében*/
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid var(--color-3);
+}
+
+/*első sort moódosítja a táblázat fő részében*/
+.content-table tbody tr:first-of-type{
+    border-top: 2px solid var(--color-3);
+}
+
+/*ha a maximum szélesség 1300px alá csökken, akkor*/
+@media only screen and (max-width: 1300px){
+    .content-table{
+        width: 85%; /*táblázat mérete csökkenjen 85%-ra*/
+    }
+
+    .search_box{
+        width: 85%; /*keresp mérete is csökkenjen 85%-ra*/
+    }
+    .search_box .search_btn{
+        background: none; /*a gomb háttérszíne ne látszódjon (torzulna)*/
+    }
+}
+
+/*ha a maximum szélesség 600px alá csökken, akkor*/
+@media only screen and (max-width: 600px){
+    .content-table{
+        width: 90%;
+    }
+
+    .search_box{
+        width: 90%;
+    }
+
+    .search_box .search_btn{
+        background: none;
+    }
+
+    .serch_box .input_search{} 
+    
+    ::placeholder{
+        color: var(--color-1); /*a kereső placeholder-jét le kell venni (nem férne ki)*/
+    }
+
+    .theme-switcher{
+        display: none;
+    }
+}
