@@ -36,4 +36,5 @@
         kiválasztott pdf oldalon az eredmény bejelölése OK
     - corpus_generator
         mongodb connection  (teszt a linux-on)
+        
 
