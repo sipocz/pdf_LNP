@@ -9,3 +9,6 @@ ABB_paragraph_model.doc2vec
 /ABB/Doc2vec_ABB.model
 /ABB/Doc2vec_ABB.model.dv.vectors.npy
 
+Doc2vec_ABB.model
+Doc2vec_ABB.model.dv.vectors.npy
+Doc2vec_ABB.model
