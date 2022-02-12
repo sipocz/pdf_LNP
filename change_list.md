@@ -30,4 +30,6 @@
 ## Related: ABB_sentences_NLP.ipynp
     - model mentés, visszatöltés -> a model tanítása és a felhasználása különválasztható
     - git problémák eliminálása
-    - rectangle maximalization design
+    - rectangle maximalization design 
+    - mongodb database configuration
+    - corpus_generator  
