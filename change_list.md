@@ -29,4 +29,5 @@
 # 20220212 10:33
 ## Related: ABB_sentences_NLP.ipynp
     - model mentés, visszatöltés -> a model tanítása és a felhasználása különválasztható
-    - git
+    - git problémák eliminálása
+    - rectangle maximalization design
