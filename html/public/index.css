@@ -27,7 +27,7 @@ body[data-theme="dark"]{
     --color-2: #423F3E; /*search-box, */
     --color-3: #2B2B2B; /*search-btn, table header, border-top, border-bottom*/
     --color-4: white;
-    --color-5: black; 
+    --color-5: rgb(241, 228, 228); 
     --color-6: #2B2B2B; /*table inner border*/
     --color-7: #0f0f0f; /*even table row, */
     --color-8: rgb(92, 255, 233);
@@ -131,6 +131,7 @@ a:link{
     border-radius: 50px;
     display: flex;
     width: 1000px;
+    
 }
 
 /*kereső gombja*/
@@ -169,7 +170,7 @@ a:link{
     overflow: hidden;
     font-size: 0.9em;
     min-width: 400px;
-    width: 1200px;
+    width: 80%;
 }
 
 /*táblázat fejlécének sorait módosítja*/
@@ -184,6 +185,26 @@ a:link{
 .content-table th, .content-table td{
     padding: 5px 10px;
 }
+
+.download{
+    vertical-align: center;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    color: var(--color-3); 
+    
+}
+
+.download_icon{
+    vertical-align: center;
+    text-align: center;
+    font-size: x-large;
+    
+    color: var(--color-5);  
+    background-color: var(--color-3);
+    border-radius: 7px;
+}
+
 
 /*azokat a td értékeket módosítja amelyiknek az osztálya btn (gomb)*/
 .content-table td[class="btn"]{
