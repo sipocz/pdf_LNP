@@ -18,7 +18,7 @@
     - Doc2vec similarity próba 3. 
     - File metadata összegyűjtés majd adatbázis építés
     - Mongodb test 4M record ingyenesen elérhető
-    - speedtest 20db lekérdezés 15sec
+    - speedtest 20db lekérdezés 15sec :-(
 
 
 # 20220211 19:03
@@ -39,9 +39,10 @@
     - basic HTML design
         hibajavítás, szinek, css
 
-# 20220213 00:00
+# 20220213 10:20
 ## Related: több
-    -
+    - Projekt ötletfal felépítése
+    - 
 
 
 
