@@ -43,6 +43,8 @@
 ## Related: több
     - Projekt ötletfal felépítése
     - AI_Search_Engine.ipynb készítée
+    - AI_learning.ipynb készítése
+        
 
 
 
