@@ -42,7 +42,7 @@
 # 20220213 10:20
 ## Related: több
     - Projekt ötletfal felépítése
-    - 
+    - AI_Search_Engine.ipynb készítée
 
 
 
