@@ -47,7 +47,10 @@
 
 # 20220214 18:50
 ## Related: több
-  
+    - pdf download
+    - index_Redesign.html kialakítása iframe struktura
+    
+
 
 
 
