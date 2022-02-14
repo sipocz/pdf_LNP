@@ -44,7 +44,10 @@
     - Projekt ötletfal felépítése
     - AI_Search_Engine.ipynb készítée
     - AI_learning.ipynb készítése
-        
+
+# 20220214 18:50
+## Related: több
+  
 
 
 
