@@ -413,17 +413,24 @@ def hello_world():
                                  
     return outstr
 
-@app.route('/arxiv', methods=['POST'])
-def arxiv():
-    text = request.form['Field1']
+@app.route('/query', methods=['POST'])
+def query():
+    user = request.form['username']
+    pwd = request.form['password']
     
-    processed_text = text.upper()
-    outstr=render_template("html_template_arxiv.html",
-                                 query_in=processed_text,
-                                 arxiv_in=arxiv_pages(processed_text.replace(" ","+"))
+    
+    processed_text = user+pwd
+    outstr=" ---------  ------------ INVALID"
+    if processed_text=="aaa":
+        outstr=render_template("query.html",
+                                 #query_in=processed_text,
+                                 #arxiv_in=arxiv_pages(processed_text.replace(" ","+"))
                                  )
-
+    
     return outstr
+
+
+
 
 @app.route('/BW_Colorizer', methods=['GET'])
 def bwcolorizer():
