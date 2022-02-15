@@ -14,116 +14,6 @@ app.logger.error('testing error log')
 app.logger.info('testing info log')
 app.config['UPLOAD_FOLDER']="./upload"
 
-def ansicode(sti):
-    outstr=""
-    for i in sti:
-        a=i
-        if i=="á":
-            a="a"
-        if i=="Á":
-            a="A"
-        if i=="é":
-            a="e"
-        if i=="É":
-            a="E"
-        if i=="í":
-            a="I"
-        if i=="Í":
-            a="I"
-        if i=="ö":
-            a="o"
-        if i=="Ö":
-            a="O"
-        if i=="ő":
-            a="o"
-        if i=="Ő":
-            a="O"
-        if i=="ó":
-            a="o"
-        if i=="Ó":
-            a="O"
-        if i=="ü":
-            a="u"
-        if i=="Ü":
-            a="u"
-        if i=="ú":
-            a="u"
-        if i=="Ú":
-            a="u"
-        outstr=outstr+a
-    return(outstr)
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#render_template_string(html_template,ingatlan_com=ingatlan_com_table)
-
-@app.route('/AI')
-
-def getcity(city="bb"):
-   outstr=render_template("html_template_city.html",
-                                 city_name=city.capitalize(),
-                                 ingatlanCom=ingatlan_com_querycity(city),
-                                 ingatlantajolo=ingatlantajolo_querycity(city),
-                                 ingatlannet=ingatlannet_querycity(city))
-   outstr="Hello1"
-   return outstr
-
-@app.route('/arxiv/<query>')
-
-def getarxiv(query="python"):
-   outstr=render_template("html_template_arxiv.html",
-                                 query_in=query,
-                                 arxiv_in=arxiv_pages(query)
-                                 )
-                                 
-   #print(outstr)
-   return outstr
-
-@app.route('/crypto')
-
-def getcrypto(ticker=""):
-    
-   outstr=render_template("html_template_crypto.html",
-                                 query_in=ticker,
-                                 crypto_in=getallcoin()
-                                 )
-                                 
-   #print(outstr)
-   return outstr
-
-
-
-
-
 
 
 @app.route('/')
@@ -131,6 +21,7 @@ def hello_world():
     outstr=render_template("login.html")
                                  
     return outstr
+
 
 @app.route('/query', methods=['POST'])
 def query():

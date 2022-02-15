@@ -263,27 +263,30 @@ td {
 }
 
 /*ha a maximum szélesség 1300px alá csökken, akkor*/
+
 @media only screen and (max-width: 1300px){
     .content-table{
-        width: 85%; /*táblázat mérete csökkenjen 85%-ra*/
+        width: 75%; /*táblázat mérete csökkenjen 85%-ra*/
     }
 
     .search_box{
-        width: 85%; /*keresp mérete is csökkenjen 85%-ra*/
+        width: 75%; /*keresp mérete is csökkenjen 85%-ra*/
     }
     .search_box .search_btn{
         background: none; /*a gomb háttérszíne ne látszódjon (torzulna)*/
     }
 }
 
+
+
 /*ha a maximum szélesség 600px alá csökken, akkor*/
 @media only screen and (max-width: 600px){
     .content-table{
-        width: 90%;
+        width: 100%;
     }
 
     .search_box{
-        width: 90%;
+        width: 70%;
     }
 
     .search_box .search_btn{
