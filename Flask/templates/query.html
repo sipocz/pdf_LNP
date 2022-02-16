@@ -28,7 +28,7 @@
 <div class="container">
     <div class="row align-items-start">
      
-        <div class="col-sm-4">
+        <div class="col-xl-12">
             <!--   Col1-->
             <table class="content-table">
                 <thead>
@@ -39,34 +39,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr >
-                        
-                        <td class="link"><a href="url">valami.valami</a></td>
+                   
+                        {% for lines in _query: %}
+                        <tr >
+                        <td class="link"><a href="{{ lines }}">{{ lines }}</a></td>
                         <td class="download" ><i class="bi bi-file-earmark-arrow-down download_icon"></i></td>
+                        </tr>
+                        {% endfor %}
                        
-                    </tr>
-                    <tr>
-                        <td class="link"><a href="url">semmi.semmi</a></td>
-                        <td class="download"><i class="bi bi-file-earmark-arrow-down download_icon"></i></td>
-                    </tr>
-                    <tr>
-                        <td class="link"><a href="url">minden.minden</a></td>
-                        <td class="download"><i class="bi bi-file-earmark-arrow-down download_icon"></i></td>
-                    </tr>
-                    <tr>
-                        <td class="link"><a href="url">hello.hello</a></td>
-                        <td class="download"><i class="bi bi-file-earmark-arrow-down download_icon"></i></td>
-                    </tr>
-                    <tr>
-                        <td class="link"><a href="url">hello.hello</a></td>
-                        <td class="download"><i class="bi bi-file-earmark-arrow-down download_icon"></i></td>
-                    </tr>
+                    
+                    
                 </tbody>
             </table>
             
         </div>
-        <div class="col-sm-8" >
-            <!--   Col2-->
+        <!--
+        <div class="col-xl-8" >
+            
             <table class="content-table">
                 <thead>
                     <tr>
@@ -85,7 +74,7 @@
             </table>
             
         </div>
-       
+        -->
         
     
     </div>

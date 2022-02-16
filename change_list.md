@@ -49,6 +49,12 @@
 ## Related: több
     - pdf download
     - index_Redesign.html kialakítása iframe struktura
+
+# 20220216 18:00
+## Related: több
+    - 
+    - FLASK webserver kialakítása
+
     
 
 
