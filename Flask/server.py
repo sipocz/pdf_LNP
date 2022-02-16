@@ -30,7 +30,7 @@ def query():
     
     
     processed_text = user+pwd
-    outstr=" ---------  ------------ INVALID"
+    outstr=" Hibás azonosítás !!!"
     if processed_text=="aaa":
         outstr=render_template("query.html",
                                  #query_in=processed_text,
