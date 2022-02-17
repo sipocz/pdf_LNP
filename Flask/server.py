@@ -10,53 +10,6 @@ import os
 app = Flask(__name__)
 
 import requests
-from bs4 import  BeautifulSoup
-app.logger.error('testing error log')
-app.logger.info('testing info log')
-app.config['UPLOAD_FOLDER']="./upload"
-
-mongo_client = pymongo.MongoClient("mongodb+srv://pdfaidata:pdfaidatapwd@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-mongo_db = mongo_client.test
-
-_MONGODB_="PDF_DB"
-_MONGOCOLL_="ABB_pdf"
-
-mongo_db = mongo_client[_MONGODB_]
-mongo_col=mongo_db[_MONGOCOLL_]
-
-
-def get_pos_info(indexlist:list):
-    out=[]
-    for actual_index in indexlist:
-        cursor=mongo_col.find({"index":actual_index})
-        for element in cursor:
-            out.append(element)
-            #print(element)
-    return(out)
-
-def print_document_name(result,ans):
-    out=[]
-    for i,result_index in enumerate(result):
-        strout=f"{i:3} .. {ans[i][1]*100:3.3}% .. {result_index['fname']+'.pdf':120} .. page:{result_index['page']:4}"
-        print(strout)
-        out.append(strout)
-    return(out)     
-
-
-doc_model=Doc2Vec.load("d:/brain/ABB_Doc_220215_brain.model")
-
-search_text="modbus tcp communication"
-search_list=search_text.lower().split(" ")
-print(search_list)
-
-model1=doc_model.infer_vector(search_list,epochs=1220)
-ans=doc_model.dv.similar_by_vector(model1,topn=20)
-
-indexes=[ans[i][0] for i,_ in enumerate(ans)] 
-result_list=get_pos_info(indexes)
-
-output=print_document_name( result_list,ans)
-
 
 
 
@@ -108,59 +61,7 @@ def query():
 
 
 
-@app.route('/BW_Colorizer', methods=['GET'])
-def bwcolorizer():
-    
-    outstr=render_template("html_template_BWColorizer.html",
-                                
-                                 
-                                 )
-    return outstr
 
-@app.route('/uploader', methods = ['GET', 'POST'])
-def upload_file():
-   if request.method == 'POST':
-      f = request.files['file']
-      fname="./upload"+"/"+f.filename
-      fname2="./static/img/"+f.filename  
-
-      f.save(fname2)
-      outstr=render_template("html_template_BWColorizer_work.html",
-                                 path2=fname2,
-                                 )
-
-      
-      return outstr
-
-@app.route('/cryptoprice')
-def crypto_price():
-    coins=["ETH","LTC","BTC"]
-    outstr=""
-    for coin in coins:
-        urlstr=f"https://api.coinbase.com/v2/prices/{coin}-USD/spot"
-        
-        api=requests.get(urlstr)
-        fback=api.json()
-        price=fback["data"]["amount"]
-        print (api.text)
-        outstr+=f"--{coin}:{price}--"
-    
-    
-      
-    return outstr
-
-
-
-
-
-@app.route('/login', methods = ['GET', 'POST'])
-def login():
-      outstr=render_template("html_google_login.html",
-                                 
-                                 )
-
-      
-      return outstr
 
 
 
