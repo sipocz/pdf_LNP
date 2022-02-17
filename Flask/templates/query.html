@@ -11,13 +11,19 @@
 
 </head>
 <body data-theme="light">
+
     <div class="wrapper">
-        <div class="search_box">
-            <div class="search_btn">
-                <i class="bi bi-search"></i>
+        <form action="/query_str" method="post">
+            <div class="search_box">
+                <input type="submit"  class="btn btn-primary">
+                <div class="search_btn">
+                    <i class="bi bi-search"></i>
+                </div>
+                
+                <input type="text" class="input_search" id="query_str" name="query_str"  placeholder="Írja be a keresőszót ebbe a mezőbe!">
             </div>
-            <input type="text" class="input_search" placeholder="Írja be a keresőszót ebbe a mezőbe!">
-        </div>
+        </form>
+
     </div>
 
     

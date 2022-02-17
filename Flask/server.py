@@ -11,9 +11,12 @@ app = Flask(__name__)
 
 import requests
 
-
-
-output=['  0 .. 93.4% .. 3BSE078160 en R ABB Ability System 800xA 6.0.3.3 Product Catalog.pdf                                                     .. page:  53',
+_AI_Search_Engine_URL_="http://192.168.2.6:5001/query/virus%20database%20update%20automatic"
+req = requests.get(_AI_Search_Engine_URL_)
+txt=req.text
+print(txt)
+output=[
+ '  0 .. 93.4% .. 3BSE078160 en R ABB Ability System 800xA 6.0.3.3 Product Catalog.pdf                                                     .. page:  53',
  '  1 .. 89.1% .. 3BSE035982-610_A_en_Control_AC_800M_Communication_Protocols.pdf                                                          .. page: 206',
  '  2 .. 88.8% .. 3BSE035981-600_A_en_System 800xA_Control_6.0_AC_800M_Binary_and_Analog_Handling.pdf                                      .. page:   5',
  '  3 .. 88.7% .. 3BSE035981-600_en_System 800xA_Control_6.0_AC_800M_Binary_and_Analog_Handling.pdf                                        .. page:   5',
@@ -42,13 +45,29 @@ def hello_world():
                                  
     return outstr
 
+@app.route('/query_str', methods=['POST'])
+def query2():
+    _query=request.form["query_str"]
+    print(_query)
+    processed_text = _query
+    
+    if processed_text!="aaa":
+        outstr=render_template("query.html",
+                                 _query=output
+                                 )
+    
+    return outstr
+
+
+
+
 
 @app.route('/query', methods=['POST'])
 def query():
     user = request.form['username']
     pwd = request.form['password']
-    
-    
+    #_query=request.form["query_str"]
+    #print(_query)
     processed_text = user+pwd
     outstr=" Hibás azonosítás !!!"
     if processed_text=="aaa":
