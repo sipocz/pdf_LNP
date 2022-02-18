@@ -40,7 +40,10 @@
                 <thead>
                     <tr>
                         <th  class="th_1">Link</th>
-                        <th  class="th_1">Letöltés</th>
+                        <th  class="th_1">Page</th>
+                        <th  class="th_1">%</th>
+                        
+                        <th  class="th_1">Download</th>
                         
                     </tr>
                 </thead>
@@ -48,7 +51,11 @@
                    
                         {% for lines in _query: %}
                         <tr >
-                        <td class="link"><a href="{{ lines[0] }}"> {{ lines["fname"] }} </a></td>
+                        <td class="link"><a href="{{ lines['fname'] }}"> {{ lines["fname"] }} </a></td> 
+                        <td class="link"><a href="{{ lines['fname'] }}"> {{ lines["page"] }} </a></td> 
+                        <td class="link"><a href="{{ lines['fname'] }}"> {{ lines["percent"] }} </a></td> 
+                        
+                        
                         <td class="download" ><i class="bi bi-file-earmark-arrow-down download_icon"></i></td>
                         </tr>
                         {% endfor %}
