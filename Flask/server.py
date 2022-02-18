@@ -49,11 +49,16 @@ def hello_world():
 def query2():
     _query=request.form["query_str"]
     print(_query)
-    processed_text = _query
+
+    
+    _AI_Search_Engine_URL_="http://192.168.2.6:5001/query/"+_query
+    print(_AI_Search_Engine_URL_)
+    req = requests.get(_AI_Search_Engine_URL_)
+    processed_text = req.text
     
     if processed_text!="aaa":
         outstr=render_template("query.html",
-                                 _query=output
+                                 _query=processed_text
                                  )
     
     return outstr
