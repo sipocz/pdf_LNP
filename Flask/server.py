@@ -54,11 +54,21 @@ def query2():
     _AI_Search_Engine_URL_="http://192.168.2.6:5001/query/"+_query
     print(_AI_Search_Engine_URL_)
     req = requests.get(_AI_Search_Engine_URL_)
+    print(type(req))
     processed_text = req.text
-    
+
+    print(type(processed_text))
+
+    import json
+    json_string=processed_text
+    req_dict=json.loads(json_string)
+    print(req_dict)
+
+    req_list=list(req_dict.values())
+    print(req_list)
     if processed_text!="aaa":
         outstr=render_template("query.html",
-                                 _query=processed_text
+                                 _query=req_list
                                  )
     
     return outstr

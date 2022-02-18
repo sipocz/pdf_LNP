@@ -48,7 +48,7 @@
                    
                         {% for lines in _query: %}
                         <tr >
-                        <td class="link"><a href="{{ lines }}">{{ lines }}</a></td>
+                        <td class="link"><a href="{{ lines[0] }}"> {{ lines["fname"] }} </a></td>
                         <td class="download" ><i class="bi bi-file-earmark-arrow-down download_icon"></i></td>
                         </tr>
                         {% endfor %}
