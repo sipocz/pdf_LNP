@@ -48,18 +48,30 @@ def query2():
     json_string=processed_text
     req_dict=json.loads(json_string)
     print(req_dict)
- 
-    #best_3=statistic(req_dict)
+    print("______________")
+  
+    
+   
 
 
     req_list=list(req_dict.values())
+    print("+++++++++++++++")
     print(req_list)
+
+
+    best_3=statistic(req_list)
+    print("******************")
+    
+    print(best_3[0][0])
+
+
+
     query_txt=_query
     if processed_text!="aaa":
         outstr=render_template("query.html",
                                  _query=req_list,
                                  _query_text=query_txt,
-                                 #_best_3=best_3
+                                 _best_3=best_3
                                  )
     
     return outstr
@@ -79,7 +91,7 @@ def query():
     if processed_text=="aaa":
         outstr=render_template("query_1.html",
                                  _query=NULL,
-                                 _best_3=NULL
+                                 
                                  
                                  )
     

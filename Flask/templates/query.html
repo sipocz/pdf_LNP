@@ -20,6 +20,9 @@
         </form>
     </div>
 
+
+
+
     <div class="container">
         <div class="row align-items-start">
          
@@ -32,9 +35,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                            {% for lines in _best3: %}
+                            {% for best in _best_3: %}
                                 <tr >
-                                    <td class="link"><a href="___"> {{ lines[0] }} </a></td> 
+                                    <td class="link"><a href="---">  {{ best[0] }} </a> </td> 
                                 </tr>
                             {% endfor %}                    
                     </tbody>
