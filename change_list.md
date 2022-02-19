@@ -55,7 +55,21 @@
     - 
     - FLASK webserver kialakítása
 
-    
+
+# 20220218 18:00
+## Related: több
+    - Flask klient-server megoldás
+    - FLASK AI_SEARCH_Engine rest API kialakítása
+    - (web) Server oldali flask módosítás api hívások beépítésa
+ 
+
+# 20220219 11:00
+## Related: több
+    - HTML update
+    - css update
+    - rest-api
+    - keresőmezőben a korábbi keresés megjelenítése
+    - 
 
 
 
