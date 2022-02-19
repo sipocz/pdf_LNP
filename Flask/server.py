@@ -22,6 +22,27 @@ def statistic(inp:list,best_n=3):
     cc=Counter(fname_list)
     return cc.most_common(best_n)
 
+def get_mongo_fileurl(fname:str):
+    '''
+    MONGODB adatbázisból filename alapján url visszaadása
+    '''
+    _PDF_DB_="PDF_DB"
+    _FILE_LOCATION_COLLECTION_="ABB_file_location"
+    client = pymongo.MongoClient("mongodb+srv://pdfaidata:pdfaidatapwd@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    mydb = client[_PDF_DB_]
+    col=mydb[_FILE_LOCATION_COLLECTION_]
+    cursor=col.find({"fname":fname})
+    out_list=[]
+    for out in cursor:
+        out_list.append(out)
+    return(out_list)
+
+print("**** MONGODB  ****")  # DEBUG
+print(get_mongo_fileurl("3BSE041434-600_A_en_System_800xA_6.0_System_Guide_Technical_Data_and_Configuration.pdf")) # DEBUG
+
+
+
+
 
 
 @app.route('/')
@@ -30,7 +51,14 @@ def hello_world():
                                  
     return outstr
 
+
+
+
+
 @app.route('/query_str', methods=['POST'])
+
+
+
 def query2():
     _query=request.form["query_str"]
     print(_query)
@@ -47,6 +75,7 @@ def query2():
     import json
     json_string=processed_text
     req_dict=json.loads(json_string)
+    print("------- REQ_DICT -----")
     print(req_dict)
     print("______________")
   
@@ -55,18 +84,29 @@ def query2():
 
 
     req_list=list(req_dict.values())
-    print("+++++++++++++++")
+
+
+
+    print("++++++ REQ_ LIST +++++++++")
+    print(req_list)
+    for req_list_item in req_list:
+        req_list_item["url"]=get_mongo_fileurl(req_list_item["fname"])[0]["url"]
+
+    print("------ REQ LIST -----")
     print(req_list)
 
 
     best_3=statistic(req_list)
     print("******************")
     
-    print(best_3[0][0])
+    print(best_3)
 
 
 
     query_txt=_query
+
+
+
     if processed_text!="aaa":
         outstr=render_template("query.html",
                                  _query=req_list,

@@ -60,9 +60,9 @@
                     <tbody>
                             {% for lines in _query: %}
                                 <tr >
-                                    <td class="link"><a href="{{ lines['fname'] }}"> {{ lines["fname"] }} </a></td> 
-                                    <td class="page"><a href="{{ lines['fname'] }}"> {{ lines["page"] }} </a></td> 
-                                    <td class="percent"><a href="{{ lines['fname'] }}"> {{ lines["percent"] }} </a></td>                         
+                                    <td class="link"><a href="{{ lines['url'] }}"> {{ lines["fname"] }} </a></td> 
+                                    <td class="page"><a href="{{ lines['url'] }}"> {{ lines["page"] }} </a></td> 
+                                    <td class="percent"><a href="{{ lines['url'] }}"> {{ lines["percent"] }} </a></td>                         
                                     <td class="view"><i class="bi bi-file-earmark-richtext view_icon"></i></td>
                                 </tr>
                             {% endfor %}                    
