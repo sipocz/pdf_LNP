@@ -69,11 +69,6 @@
     - css update
     - rest-api
     - keresőmezőben a korábbi keresés megjelenítése
-    - 
-
-
-
-
-         
-        
+    - best 3 jelenjen meg a listában (a legtöbbször előforduló a keresésben) ez lehet nem a legjobb eredményt adja. :-(
+    - icon a HTML oldalon 
 

@@ -18,7 +18,7 @@
     --color-4: white;
     --color-5: rgb(150, 150, 150); 
     --color-6: #2B2B2B; /*table inner border*/
-    --color-7: #0f0f0f; /*even table row, */
+    --color-7: #1b1b1b; /*even table row, */
     --color-8: rgb(92, 255, 233);
     --switch: #565656;
 }
@@ -83,14 +83,14 @@ body{
 
 /*TÁBLÁZAT*/
 table {
-    border-radius: 15px 15px 0 0;   
+    border-radius: 15px 15px 15px 15px;   
 }
 
 .content-table{
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 15px 15px;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
     overflow: hidden;
     font-size: 0.9em;
@@ -99,8 +99,7 @@ table {
 
 .th_1{
     background-color: var(--color-3);
-    color: white;
-    
+    color: white;   
 }
 
 .content-table th, .content-table td{
@@ -135,6 +134,7 @@ table {
 
 .content-table tbody tr:last-of-type{
     border-bottom: 2px solid var(--color-3);
+    border-radius: 15px;
 }
 
 .content-table tbody tr:first-of-type{
@@ -143,4 +143,40 @@ table {
 
 a:link{
     color: var(--color-8);
+}
+
+/*MOBIL NÉZET*/
+@media only screen and (max-width: 1300px){
+    .content-table{
+        width: 100%;
+    }
+
+    .wrapper{
+        margin: 0 auto;
+        width: 100%; 
+    }
+    
+    .search_box input[class="input_search"]{
+        width: 800px;
+    }
+
+    .theme-switcher{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    .search_box input[class="input_search"]{
+        width: 500px;
+    }
+
+    .percent, .page{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .search_box input[class="input_search"]{
+        width: 300px;
+    }
 }
