@@ -1,5 +1,5 @@
 /*BODY*/
-body[data-theme="light"]{
+:root{
     --color-1: #FBF8F1; /*backgorund, search-input*/ 
     --color-2: #e0dad0; /*search-box, */
     --color-3: #54BAB9; /*search-btn, table header, border-top, border-bottom*/
@@ -8,9 +8,10 @@ body[data-theme="light"]{
     --color-6: #dddddd; /*table inner border*/
     --color-7: #F7ECDE; /*even table row, */
     --color-8: #333333;
+    --switch: #54BAB9;
 }
 
-body[data-theme="dark"]{
+.darkmode{
     --color-1: #0e0e0e; /*backgorund, search-input*/ 
     --color-2: #423F3E; /*search-box, */
     --color-3: #2B2B2B; /*search-btn, table header, border-top, border-bottom*/
@@ -19,6 +20,7 @@ body[data-theme="dark"]{
     --color-6: #2B2B2B; /*table inner border*/
     --color-7: #0f0f0f; /*even table row, */
     --color-8: rgb(92, 255, 233);
+    --switch: #565656;
 }
 
 body{
@@ -34,43 +36,13 @@ body{
     position: absolute;
     right: 10px;
     top: 5px;
-}
-
-.checkbox{
-    width: 0;
-    height: 0;
-    visibility: hidden;
-}
-
-.label{
-    cursor: pointer;
+    background-color: var(--switch);
+    color: var(--color-8);
+    outline: none;
+    border: none;
+    width: 30px;
     height: 30px;
-    width: 60px;
-    background-color: rgb(255, 255, 255);
-    border: 0.1px solid var(--color-5);
     border-radius: 50px;
-    text-indent: -9999px;
-}
-
-.label::after{
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    background-color: #252130;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    transition: .5s ease;
-}
-
-input:checked + label{
-    background-color: var(--color-5);
-}
-
-input:checked + label::after{
-    left: calc(100% - 25px);
 }
 
 /*KERESŐ*/
