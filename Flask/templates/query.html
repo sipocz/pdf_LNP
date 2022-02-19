@@ -20,6 +20,35 @@
         </form>
     </div>
 
+    <div class="container">
+        <div class="row align-items-start">
+         
+            <div class="col-xl-12">
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th class="th_1">Legjobb találatok</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for lines in _best3: %}
+                                <tr >
+                                    <td class="link"><a href="___"> {{ lines[0] }} </a></td> 
+                                </tr>
+                            {% endfor %}                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
 <div class="container">
     <div class="row align-items-start">
      
