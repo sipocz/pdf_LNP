@@ -45,7 +45,7 @@ def get_mongo_fileurl(fname:str):
     return(out_list)
 
 print("**** MONGODB  ****")  # DEBUG
-print(get_mongo_fileurl("3BSE041434-600_A_en_System_800xA_6.0_System_Guide_Technical_Data_and_Configuration.pdf")) # DEBUG
+print(get_mongo_fileurl("3BSE041434-600_A_en_System_800xA_6.0_System_Guide_Technical_Data_and_Configuration")) # DEBUG
 
 
 def path_splitter(url):

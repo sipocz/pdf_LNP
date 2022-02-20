@@ -70,5 +70,14 @@
     - rest-api
     - keresőmezőben a korábbi keresés megjelenítése
     - best 3 jelenjen meg a listában (a legtöbbször előforduló a keresésben) ez lehet nem a legjobb eredményt adja. :-(
-    - icon a HTML oldalon 
+    - icon a HTML oldalon
+
+# 20220220 10:00
+## Related: több
+    - mongodb kapcsolat kialakítása a fájl url lekérdezése miatt
+    - Fájl url ijntegrálása HTML-be
+    - Fájl letöltés tesztje, fájl megnyitása
+    - Mongodb keresés optimalizálás
+    - flask static fájlmegosztás megoldás keresés, fálj küldés a fájlrendszerből    
+
 
