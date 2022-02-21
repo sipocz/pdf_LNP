@@ -109,9 +109,11 @@ def query2():
 
     # print(type(processed_text))#DEBUG
 
-    
+    print(processed_text)
     json_string=processed_text
     req_dict=json.loads(json_string)
+
+
     # print("------- REQ_DICT -----") #DEBUG
     # print(req_dict) #DEBUG
     # print("______________") #DEBUG

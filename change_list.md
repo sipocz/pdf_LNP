@@ -81,3 +81,12 @@
     - flask static fájlmegosztás megoldás keresés, fálj küldés a fájlrendszerből    
 
 
+# 20220221 21:41
+## Related: több
+    - server oldalra átjön minden infó a AI_search_engine-től
+    - id alapján fog keresni a PNG generator
+    
+
+
+
+
