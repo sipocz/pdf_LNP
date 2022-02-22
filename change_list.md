@@ -85,7 +85,16 @@
 ## Related: több
     - server oldalra átjön minden infó a AI_search_engine-től
     - id alapján fog keresni a PNG generator
-    
+
+# 20220222 22:22
+## Related: több
+    - png_generator API fejlesztés 
+    - id alapján pdf fájl megtalálása
+    - id alapján a keresett adat megtalálása
+    - png generálás --
+    - keretezés --
+
+
 
 
 
