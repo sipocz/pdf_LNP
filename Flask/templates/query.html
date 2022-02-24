@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../static/css/query.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="icon" type="image/png" href="../static/img/search.png">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  
     <title>Kereső</title>
 
 </head>
@@ -56,7 +60,7 @@
                             <th class="th_1 page">Oldal</th>
                             <th class="th_1 percent">%</th>
                             <th class="th_1 show">Megtekintés</th>
-                         <!--      <th class="th_1 show">Megtekintés</th>  -->
+                               <th class="th_1 show">Megtekintés</th>  
                             
                         </tr>
                     </thead>
@@ -68,22 +72,25 @@
                                     <td class="percent"><a href="/download/{{ lines['fname'] }}"> {{ lines["percent"] }} </a></td>                         
                                     <td class="view"><a href="http://192.168.2.6:5002/png/{{ lines['id'] }}"><i class="bi bi-file-earmark-richtext view_icon"></a></i></td>
                                     
-                                   <!-- <td><button type="button" class="bi bi-file-earmark-richtext view_icon" data-toggle="modal" data-target="#myModal"></button></td>>  -->
+                                    <td><button type="button" class="bi bi-file-earmark-richtext view_icon" data-toggle="modal" data-target="#a{{ lines['id'] }}"></button></td>
                                 </tr>
                             {% endfor %}                    
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-sm">
+
+
+        {% for lines in _query: %}
+        <div class="modal fade" id="a{{ lines['id'] }}" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-xl" style="width:100%">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Modal Header</h4>
+                  <h4 class="modal-title">Kép megjelenítés</h4>
                 </div>
                 <div class="modal-body">
-                  <p>This is a small modal.</p>
+                  <p><img src="http://192.168.2.6:5002/png/{{ lines['id'] }}" alt="png" width="100%" height="100%"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -91,6 +98,7 @@
               </div>
             </div>
         </div>
+        {% endfor %}
     </div> <!-- Container 2 end --> 
 
     <button class="theme-switcher" id="button" onclick="handleDarkModeToggle()">
