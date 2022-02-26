@@ -94,7 +94,9 @@
     - png generálás --
     - keretezés --
 
-
+# 20220225 18:22
+## Related: query-html
+    - query.html modal ablak készítés  
 
 
 
