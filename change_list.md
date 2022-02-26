@@ -97,7 +97,9 @@
 # 20220225 18:22
 ## Related: query-html
     - query.html modal ablak készítés  
-
+    - doc2vec vector_size=200-->400 eboch=360 
+    - model= d:/brain/ABB_Doc_220226_2_brain.model
+    - 
 
 
 
