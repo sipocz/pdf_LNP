@@ -110,7 +110,7 @@
 
 
 
-# 20220227 18:22
+# 20220227 10:22
 ## Related: több
     - model= d:/brain/ABB_Doc_220227_2_brain.model
     - corpus [list]= ABB_sentences_20220227_113000.txt
