@@ -112,7 +112,7 @@
 
 # 20220227 18:22
 ## Related: több
-    - model= d:/brain/ABB_Doc_220226_3_brain.model
-    - corpus= 'D:/corpus/corpus_ABB_sentences_20220226212400.txt'
+    - model= d:/brain/ABB_Doc_220227_2_brain.model
+    - corpus [list]= ABB_sentences_20220227_113000.txt
 
 
