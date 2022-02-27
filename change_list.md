@@ -99,7 +99,20 @@
     - query.html modal ablak készítés  
     - doc2vec vector_size=200-->400 eboch=360 
     - model= d:/brain/ABB_Doc_220226_2_brain.model
-    - 
+    - model= d:/brain/ABB_Doc_220226_3_brain.model
 
+# 20220226 18:22
+## Related: több
+    - query.html modal ablak készítés  
+    - doc2vec vector_size=200-->400 eboch=360 
+    - model= d:/brain/ABB_Doc_220226_2_brain.model
+    - model= d:/brain/ABB_Doc_220226_3_brain.model
+
+
+
+# 20220227 18:22
+## Related: több
+    - model= d:/brain/ABB_Doc_220226_3_brain.model
+    - corpus= 'D:/corpus/corpus_ABB_sentences_20220226212400.txt'
 
 
