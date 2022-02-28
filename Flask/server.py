@@ -99,10 +99,10 @@ def query2():
 
 
     _query=request.form["query_str"]
-    # print(_query) #DEBUG
+    print(_query) #DEBUG
     
     AI_Search_Engine_URL=_AI_Search_Engine_+_query
-    # print(_AI_Search_Engine_URL_) #DEBUG
+    print(AI_Search_Engine_URL) #DEBUG
     req = requests.get(AI_Search_Engine_URL)
     # print(type(req)) #DEBUG
     processed_text = req.text
