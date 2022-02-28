@@ -115,4 +115,8 @@
     - model= d:/brain/ABB_Doc_220227_2_brain.model
     - corpus [list]= ABB_sentences_20220227_113000.txt
 
+# 20220228 19:35
+## MONGODB
+    - mongodb login titkosítása
+
 

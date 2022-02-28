@@ -8,6 +8,11 @@ import pymongo
 from collections import Counter
 import json
 import os
+
+from os import getenv
+
+
+
 app = Flask(__name__,static_folder="static")
 
 import requests
@@ -16,6 +21,7 @@ import requests
 #--------------------------------------------------
 #  GLOBAL CONSTANTS
 _AI_Search_Engine_="http://192.168.2.6:5001/query/"
+_mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 #--------------------------------------------------
 
 
@@ -36,7 +42,7 @@ def get_mongo_fileurl(fname:str):
     # print("Mongo_start")
     _PDF_DB_="PDF_DB"
     _FILE_LOCATION_COLLECTION_="ABB_file_location"
-    client = pymongo.MongoClient("mongodb+srv://pdfaidata:pdfaidatapwd@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    client = pymongo.MongoClient(_mongo_conn_)
     mydb = client[_PDF_DB_]
     col=mydb[_FILE_LOCATION_COLLECTION_]
 
