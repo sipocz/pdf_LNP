@@ -118,5 +118,9 @@
 # 20220228 19:35
 ## MONGODB
     - mongodb login titkosítása
-
+    
+# 20220301 21:56
+## MONGODB
+    - mongodb archive megoldások
+   
 
