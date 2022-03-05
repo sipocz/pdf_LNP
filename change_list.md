@@ -122,5 +122,10 @@
 # 20220301 21:56
 ## MONGODB
     - mongodb archive megoldások
-   
+
+
+# 20220305 19:00
+## MONGODB 
+    - mongo_db.py osztály elkészítése remote mondo database coolection-ök mentése, feltöltése 
+    
 
