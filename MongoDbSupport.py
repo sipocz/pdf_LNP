@@ -3,7 +3,7 @@ class MongoDbSupport:
     def __init__(self,connection_str:str):
         
         self._connection_str_=connection_str
-        self.dms=False
+        self.dms=False  
 
 
     def to_csv(self,db:str,coll:str,fname:str):
@@ -76,7 +76,7 @@ class MongoDbSupport:
 
     def debug_mode(self,value:bool=True):
         '''
-        Az osztályt debug üzemmódba teszi.(default) Több kiírás jelenik neg a kimeneten 
+        Az osztályt debug üzemmódba teszi.(default=True) Több kiírás jelenik neg a kimeneten 
             ha bemeneti értéke False: a debug móde kikapcsolásra kerül
             az osztály létrehozásakor a debug mód ki van kapcsolva 
         '''
