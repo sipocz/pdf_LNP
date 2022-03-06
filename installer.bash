@@ -21,3 +21,7 @@ source /home/opt/nlp_root/bin/activate
 python -m pip install pymongo
 python -m pip install gensim
 python -m pip install flask
+python -m pip install requests
+
+# enable port on firewall
+sudo firewall-cmd --add-port=5000/tcp --permanent            

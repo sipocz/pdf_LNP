@@ -173,7 +173,7 @@ def query():
     outstr=" Hibás azonosítás !!!"
     if processed_text=="aaa":
         outstr=render_template("query_1.html",
-                                 _query=NULL,
+                                 _query=None,
                                  
                                  
                                  )
