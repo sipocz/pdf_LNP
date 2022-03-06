@@ -10,18 +10,35 @@ import json
 import os
 
 from os import getenv
-
+import platform
+import requests
 
 
 app = Flask(__name__,static_folder="static")
 
-import requests
+os_str=platform.platform()
+if "Windows" in os_str:
+    _OS_="windows"
+else:
+    _OS_="linux"
 
-#_AI_Search_Engine_URL_="http://192.168.2.6:5001/query/virus%20database%20update%20automatic"
+
+
+
 #--------------------------------------------------
 #  GLOBAL CONSTANTS
-_AI_Search_Engine_="http://192.168.2.6:5001/query/"
-_mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+#--------------------------------------------------
+
+
+
+
+
+if _OS_== "windows":
+    _AI_Search_Engine_="http://192.168.2.6:5001/query/"
+    _mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+else:
+    _AI_Search_Engine_="http://192.168.2.6:5001/query/"
+    
 #--------------------------------------------------
 
 

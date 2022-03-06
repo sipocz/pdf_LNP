@@ -26,3 +26,12 @@ python -m pip install requests
 # enable port on firewall
 sudo firewall-cmd --add-port=5000/tcp --permanent 
 
+# download application from GIT
+cd /home/opc/git/pdf_NLP 
+sudo git pull https://github.com/sipocz/pdf_NLP.git
+
+
+export mongo_usr=pdfaidata
+export mongo_pwd=**********
+
+
