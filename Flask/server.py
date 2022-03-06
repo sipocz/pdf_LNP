@@ -25,9 +25,9 @@ else:
 
 
 
-#--------------------------------------------------
-#  GLOBAL CONSTANTS
-#--------------------------------------------------
+#---------------------------------------------------#
+#  GLOBAL CONSTANTS                                 #
+#---------------------------------------------------#
 
 
 
@@ -37,7 +37,7 @@ if _OS_== "windows":
     _AI_Search_Engine_="http://192.168.2.6:5001/query/"
     _mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 else:
-    _AI_Search_Engine_="http://192.168.2.6:5001/query/"
+    _AI_Search_Engine_="http://10.0.0.214:5001/query/"
     
 #--------------------------------------------------
 

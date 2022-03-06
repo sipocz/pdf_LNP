@@ -1,3 +1,8 @@
+# https://cloud.oracle.com/compute/instances?region=eu-frankfurt-1
+# IP: 130.61.29.20:5000
+# IP: 10.0.0.214
+
+
 # working directory creation
 mkdir /home/opc/nlp_root
 cd /home/opc/nlp_root
