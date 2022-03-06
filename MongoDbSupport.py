@@ -1,4 +1,4 @@
-class mongo_db:
+class MongoDbSupport:
     
     def __init__(self,connection_str:str):
         
