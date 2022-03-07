@@ -1,4 +1,4 @@
-#from asyncio.windows_events import NULL
+
 from flask import Flask, send_from_directory, send_file
 from flask import render_template_string
 from flask import render_template,request
@@ -30,14 +30,17 @@ else:
 #---------------------------------------------------#
 
 
-
+_mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 
 if _OS_== "windows":
     _AI_Search_Engine_="http://192.168.2.6:5001/query/"
-    _mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    _PNG_Server_name_="http://192.168.2.6:5002/png/"
+
 else:
     _AI_Search_Engine_="http://10.0.0.214:5001/query/"
+    _PNG_Server_name_="http://130.61.29.20:5002/png/"
+    
     
 #--------------------------------------------------
 
@@ -171,7 +174,8 @@ def query2():
         outstr=render_template("query.html",
                                  _query=req_list,
                                  _query_text=query_txt,
-                                 _best_3=best_3
+                                 _best_3=best_3,
+                                 _PNG_Server_name=_PNG_Server_name_
                                  )
     
     return outstr

@@ -70,7 +70,7 @@
                                     <td class="link"><a href="/download/{{ lines['fname'] }}"> {{ lines["fname"] }} </a></td> 
                                     <td class="page"><a href="/download/{{ lines['fname'] }}"> {{ lines["page"] }} </a></td> 
                                     <td class="percent"><a href="/download/{{ lines['fname'] }}"> {{ lines["percent"] }} </a></td>                         
-                                    <td class="view"><a href="http://192.168.2.6:5002/png/{{ lines['id'] }}"><i class="bi bi-file-earmark-richtext view_icon"></a></i></td>
+                                    <td class="view"><a href="{{ _PNG_Server_name }}{{ lines['id'] }}"><i class="bi bi-file-earmark-richtext view_icon"></a></i></td>
                                     
                                     <td><button type="button" class="bi bi-file-earmark-richtext view_icon" data-toggle="modal" data-target="#a{{ lines['id'] }}"></button></td>
                                 </tr>
@@ -90,7 +90,7 @@
                   <h4 class="modal-title">Kép megjelenítés</h4>
                 </div>
                 <div class="modal-body">
-                  <p><img src="http://192.168.2.6:5002/png/{{ lines['id'] }}" alt="png" width="100%" height="100%"></p>
+                  <p><img src="{{ _PNG_Server_name }}{{ lines['id'] }}" alt="png" width="100%" height="100%"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">&times;</button>

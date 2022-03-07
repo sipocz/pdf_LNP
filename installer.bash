@@ -9,16 +9,27 @@ cd /home/opc/nlp_root
 mkdir brain
 cd brain
 # download brain files:
+
 !wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB_Doc_220227_2_brain.model
 !wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB_Doc_220227_2_brain.model.dv.vectors.np
+cd /home/opc/nlp_root
+mkdir doc
+cd doc
+!wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB.zip  # letölti a teljes könyvtárat?
+unzip ABB.zip
+
 
 
 # install environment
 sudo yum install python3.8
 sudo yum install virtualenv
 
+
+
 #create environment
 virtualenv -p /usr/bin/python3.8 /home/opc/nlp_root
+cd /home/opc/nlp_root
+source bin/activate
 
 
 cd /nlp_root

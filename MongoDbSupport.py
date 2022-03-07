@@ -100,7 +100,7 @@ if __name__=="__main__":
 
     _mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
-    mc=mongo_class(_mongo_conn_)
+    mc=MongoDbSupport(_mongo_conn_)
     mc.debug_mode()
     #mc.to_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"d:/Backup/20220305/pdf_file_location.csv")
     #mc.to_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220305/pdf_metadata.csv")
