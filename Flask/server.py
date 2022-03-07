@@ -61,9 +61,10 @@ def get_mongo_fileurl(fname:str):
     '''
     MONGODB adatbázisból filename alapján url visszaadása
     '''
-    # print("Mongo_start")
+    print("Mongo_start")
     _PDF_DB_="PDF_DB"
     _FILE_LOCATION_COLLECTION_="ABB_file_location"
+    print("mongo_conn=",_mongo_conn_)
     client = pymongo.MongoClient(_mongo_conn_)
     mydb = client[_PDF_DB_]
     col=mydb[_FILE_LOCATION_COLLECTION_]
@@ -73,7 +74,8 @@ def get_mongo_fileurl(fname:str):
     out_list=[]
     for out in cursor:
         out_list.append(out)
-    #print("Mongo end")
+    print("out_list[0]=",out_list[0])  #DEBUG
+    print("Mongo end")  #DEBUG
     return(out_list)
 
 #print("**** MONGODB  ****")  # DEBUG
