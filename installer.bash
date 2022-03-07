@@ -38,9 +38,15 @@ python -m pip install pymongo
 python -m pip install gensim
 python -m pip install flask
 python -m pip install requests
+# PNG generator
+python3 -m pip install --upgrade Pillow
+python -m pip install --upgrade pymupdf
+
 
 # enable port on firewall
-sudo firewall-cmd --add-port=5000/tcp --permanent 
+sudo firewall-cmd --add-port=5000/tcp --permanent
+sudo firewall-cmd --add-port=5002/tcp --permanent
+sudo firewall-cmd --reload
 
 # download application from GIT
 cd /home/opc/git/pdf_NLP 

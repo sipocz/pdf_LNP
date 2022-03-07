@@ -36,10 +36,12 @@ _mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster
 if _OS_== "windows":
     _AI_Search_Engine_="http://192.168.2.6:5001/query/"
     _PNG_Server_name_="http://192.168.2.6:5002/png/"
+    _DOC_ROOT_="D:/"
 
 else:
     _AI_Search_Engine_="http://10.0.0.214:5001/query/"
     _PNG_Server_name_="http://130.61.29.20:5002/png/"
+    _DOC_ROOT_="/home/opc/nlp_root/doc/"
     
     
 #--------------------------------------------------
@@ -102,13 +104,17 @@ def download(fname):
     ez a kód fut, ha rányomunk egy fájl url-re. 
     '''
     
-    #print("-------------- DOWNLOAD --------------")
-    #print(f"fname:{fname}")
+    print("-------------- DOWNLOAD --------------")
+    print(f"fname:{fname}")
     
-    #print(f"PATH:{app.instance_path}")
     ret=get_mongo_fileurl(fname)
-    #print(ret)
+    
+    print("ret=",ret) #DEBUG
     url=ret[0]["url"]
+    if url[1]==":":   #a windows D:blabla még benne van a file nevében!!
+        url=_DOC_ROOT_+url[3:]
+
+
     directory=path_splitter(url)
     #print(f"directory:{directory}")
     return send_file(directory+fname+".pdf",as_attachment=False)
