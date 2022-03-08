@@ -53,7 +53,6 @@ cd /home/opc/git/pdf_NLP
 sudo git pull https://github.com/sipocz/pdf_NLP.git
 
 
-export mongo_usr=pdfaidata
-export mongo_pwd=**********
+
 
 

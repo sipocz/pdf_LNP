@@ -129,6 +129,9 @@
     - mongo_db.py osztály elkészítése remote mondo database coolection-ök mentése, feltöltése 
 
 # 20220307 18:00
-    - oracle VS configuration
-    -  
+    - oracle WS configuration
+
+# 20220308 19:58 
+    - bash scriptek a servizek futtatásához
+    
 
