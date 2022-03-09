@@ -10,12 +10,12 @@ mkdir brain
 cd brain
 # download brain files:
 
-!wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB_Doc_220227_2_brain.model
-!wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB_Doc_220227_2_brain.model.dv.vectors.np
+wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB_Doc_220227_2_brain.model
+wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB_Doc_220227_2_brain.model.dv.vectors.np
 cd /home/opc/nlp_root
 mkdir doc
 cd doc
-!wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB.zip  # letölti a teljes könyvtárat?
+wget --user ftpuser@protonix.hu  --password xxxxxxxx ftp://protonix.hu/public_ftp/ABB.zip  # letölti a teljes könyvtárat?
 unzip ABB.zip
 
 
