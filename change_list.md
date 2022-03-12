@@ -133,5 +133,9 @@
 
 # 20220308 19:58 
     - bash scriptek a servizek futtatásához
+
+# 20220312 18:00
+    - corpus generálás, tisztítás
     
+
 

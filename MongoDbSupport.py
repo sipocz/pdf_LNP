@@ -128,13 +128,13 @@ if __name__=="__main__":
 
     mc=MongoDbSupport(_mongo_conn_)
     mc.debug_mode()
-    #mc.to_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"d:/Backup/20220305/pdf_file_location.csv")
-    #mc.to_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220305/pdf_metadata.csv")
+    mc.to_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"d:/Backup/20220312/pdf_file_location.csv")
+    mc.to_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220312/pdf_metadata.csv")
     #mc.kill_collection(_PDF_DB_,_FILE_LOCATION_COLLECTION_)
     #mc.upload_from_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"d:/Backup/20220305/pdf_file_location.csv")
     
     mc.kill_collection(_PDF_DB_,_META_INFO_)
-    mc.upload_from_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220305/pdf_metadata.csv")
+    mc.upload_from_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220312/pdf_metadata.csv")
 
     #mc.regenerate_from_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220305/pdf_metadata.csv")
     '''
