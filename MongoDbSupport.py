@@ -82,7 +82,33 @@ class MongoDbSupport:
         '''
         self.dms=value #Debug_mode_state
 
-
+    
+    def regenerate_from_csv(self,db:str,coll:str,fname:str):
+        
+        '''
+        MONGODB adatbázisba collection feltöltése fname csv-ből
+        '''
+        if self.dms:
+            print("Upload_start")
+        import pymongo
+        import pandas as pd
+    
+        client = pymongo.MongoClient(self._connection_str_)
+        mydb = client[db]   #DB 
+        col=mydb[coll]      #Collection
+        #print(df.head())
+        df=pd.read_csv(fname)
+        
+        
+        '''
+        if self.dms:
+            print(df.head())
+        list_of_dict=df.to_dict('records')
+        col.insert_many(list_of_dict)
+        if self.dms:
+            print("exit upload")
+        return(col)
+        '''
 
 
 
@@ -104,6 +130,20 @@ if __name__=="__main__":
     mc.debug_mode()
     #mc.to_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"d:/Backup/20220305/pdf_file_location.csv")
     #mc.to_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220305/pdf_metadata.csv")
-    mc.kill_collection(_PDF_DB_,_FILE_LOCATION_COLLECTION_)
-    mc.upload_from_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"d:/Backup/20220305/pdf_file_location.csv")
+    #mc.kill_collection(_PDF_DB_,_FILE_LOCATION_COLLECTION_)
+    #mc.upload_from_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"d:/Backup/20220305/pdf_file_location.csv")
+    
+    mc.kill_collection(_PDF_DB_,_META_INFO_)
+    mc.upload_from_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220305/pdf_metadata.csv")
+
+    #mc.regenerate_from_csv(_PDF_DB_,_META_INFO_,"d:/Backup/20220305/pdf_metadata.csv")
+    '''
+    fname="d:/Backup/20220305/pdf_metadata.csv"
+    import pandas as pd
+    df=pd.read_csv(fname)
+    df=df.astype({"pos0":"int32","pos1":"int32","pos2":"int32","pos3":"int32"})
+
+    print(df.head())
+    df.to_csv("d:/Backup/20220312/pdf_metadata.csv",index=False)
+    '''
     

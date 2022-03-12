@@ -63,12 +63,13 @@ def get_mongo_selection_data(id:str):
     # print("Mongo_start")
 
     client = pymongo.MongoClient(_mongo_conn_)
+    print(_mongo_conn_) #DEBUG
     mydb = client[_PDF_DB_]
     col=mydb[_SENTENCE_LOCATION_COLLECTION_]
 
 
-    cursor=col.find_one({"_id":ObjectId(id)})
-    # print(cursor) #DEBUG
+    cursor=col.find_one({"_id":id})
+    print("** get_mongo_selection_data Cursor:",cursor) #DEBUG
     return(cursor)
 
 
@@ -151,8 +152,9 @@ def text_drawer(fname,rmatrix,delta=2, index=None):
 
 # %%
 def xpng(search_text):
+    print("search text:",search_text ) #DEBUG
     mongo_sentence_pos=get_mongo_selection_data(search_text)
-    #print("mongo_sentence_pos:",mongo_sentence_pos) # DEBUG
+    print("mongo_sentence_pos:",mongo_sentence_pos) # DEBUG
     file_data=get_mongo_fileurl(mongo_sentence_pos["fname"])
     #print ("file_data=",file_data) #DEBUG
     file_name=file_data[0]["url"]
