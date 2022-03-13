@@ -61,7 +61,7 @@ def AI_searching(search_text:str, topn:int=20):
     search_text=search_text.lower()
     search_list=search_text.split(" ")
     # print(f"input vector:  {search_list}") #DEBUG
-    model1=doc_model.infer_vector(search_list,epochs=1220)
+    model1=doc_model.infer_vector(search_list,epochs=4220)
     ans=doc_model.dv.similar_by_vector(model1,topn=topn)
     # debug
     # print(ans)

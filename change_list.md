@@ -136,6 +136,7 @@
 
 # 20220312 18:00
     - corpus generálás, tisztítás
-    
+    - metaadatok mentése CSV-be
+    - metaadatok _id kialakítása 
 
 
