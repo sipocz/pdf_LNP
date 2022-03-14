@@ -56,7 +56,7 @@ else:
 
 # %%
 
-def get_mongo_selection_data(id:str):
+def get_mongo_selection_data(id):
     '''
     MONGODB adatbázisból id alapján data visszaadása
     '''
@@ -153,7 +153,7 @@ def text_drawer(fname,rmatrix,delta=2, index=None):
 # %%
 def xpng(search_text):
     print("search text:",search_text ) #DEBUG
-    mongo_sentence_pos=get_mongo_selection_data(search_text)
+    mongo_sentence_pos=get_mongo_selection_data(int(search_text))
     print("mongo_sentence_pos:",mongo_sentence_pos) # DEBUG
     file_data=get_mongo_fileurl(mongo_sentence_pos["fname"])
     #print ("file_data=",file_data) #DEBUG
@@ -174,7 +174,7 @@ app = Flask(__name__)
 
 @app.route('/png/<search_text>')
 def query(search_text):
-    #print(search_text) #DEBUG
+    print("search_text:",search_text) #DEBUG
     fname=xpng(search_text)
     
     #print(f"fileName:{fname}") #DEBUG
