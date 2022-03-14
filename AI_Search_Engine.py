@@ -33,11 +33,11 @@ else:
 # %%
 if _OS_== "linux":
     _modelpath_="/home/opc/nlp_root/brain/"
-    _model_name_="ABB_Doc_220312_1_brain.model"  
+    _model_name_="ABB_Doc_220313_2_brain.model"  
 else:
     
     _modelpath_="D:/brain/"
-    _model_name_="ABB_Doc_220312_1_brain.model"
+    _model_name_="ABB_Doc_220313_2_brain.model"
 
 
 # %%
