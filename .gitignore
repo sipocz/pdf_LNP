@@ -13,3 +13,4 @@ Doc2vec_ABB.model
 Doc2vec_ABB.model.dv.vectors.npy
 Doc2vec_ABB.model
 __pycache__/MongoDbSupport.cpython-38.pyc
+*.pyc
