@@ -13,7 +13,7 @@ from os import getenv
 import platform
 import requests
 
-
+message_prefix="**** OTIQ query: "
 app = Flask(__name__,static_folder="static")
 
 os_str=platform.platform()
@@ -133,7 +133,7 @@ def query2():
 
 
     _query=request.form["query_str"]
-    print(_query) #DEBUG
+    print(f"{message_prefix} -- {_query}") #DEBUG
     
     AI_Search_Engine_URL=_AI_Search_Engine_+_query
     print(AI_Search_Engine_URL) #DEBUG
