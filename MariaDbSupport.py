@@ -21,6 +21,9 @@ class MariaDbSupport:
 
 
     def count(self,table):
+        '''
+        Megadott tábla méretét adja vissza
+        '''
         self.cur.execute("SELECT count(*) from " + table)
         o=self.cur.next()
         return o[0]
