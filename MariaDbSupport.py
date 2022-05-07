@@ -7,6 +7,8 @@ from pandas import DataFrame
 
 # %%
 class MariaDbSupport:
+
+# -----------------------------------
     
     def __init__(self,user,pwd,host,database,port=3306):
         
@@ -18,17 +20,14 @@ class MariaDbSupport:
         self.dms=False
         self.connected=False
 
-
+# -----------------------------------
 
     def count(self,table):
-        '''
-        Megadott tábla méretét adja vissza
-        '''
         self.cur.execute("SELECT count(*) from " + table)
         o=self.cur.next()
         return o[0]
 
-
+# -----------------------------------
 
     def debug_mode(self,value:bool=True):
         '''
@@ -38,7 +37,7 @@ class MariaDbSupport:
         '''
         self.dms=value #Debug_mode_state
 
-
+# -----------------------------------
 
     def connect(self,db):
         '''
@@ -51,7 +50,7 @@ class MariaDbSupport:
         else:
             print("Conencted!!")
 
-
+# -----------------------------------
 
     def disconnect(self):
         '''
@@ -64,7 +63,7 @@ class MariaDbSupport:
         else:
             print("disconencted")
 
-
+# -----------------------------------
 
     def to_csv(self,table:str,fname:str):
         import pandas as pd
@@ -93,8 +92,7 @@ class MariaDbSupport:
             print("to_csv exit")
         return        
 
-
-
+# -----------------------------------
     
     def upload_from_csv(self,table:str,fname:str,init=False):
         
@@ -149,27 +147,66 @@ class MariaDbSupport:
                 if self.dms:
                     print(i, end="_ _")
         self.conn.commit()    
-            
-        
 
+# -----------------------------------
+             
+    def get_selection(self,table,id):
+        '''
+        MARIADB adatbázisból id alapján data visszaadása
+        '''
+        sql_str='SELECT * from '+table+' WHERE _id = "'+id+'"'
+        if self.dms:
+            print(sql_str)
+        sel=self.cur.execute(sql_str)
+        out=self.cur.fetchall()
+        print(out)
+        return(out)
+    
+# -----------------------------------
+
+    def get_fileurl(self,table:str, fname:str):
+        
+        '''
+        MARIADB adatbázisból fname alapján url visszaadása
+        '''
+
+        sql_str='SELECT url from '+table+' WHERE fname = "' +fname+'"'
+        self.cur.execute(sql_str)
+        out=self.cur.fetchall()
+        if self.dms:
+            print(sql_str)
+            print(out[0][0])
+        return(out)
+
+
+            
         
 
 # %%
 if __name__=="__main__":
-    pass
-    #maria_usr=getenv('maria_nlp_user')
-    #maria_pwd=getenv('maria_nlp_pwd')
-    #maria_host="217.144.54.147"
-    #database="NLP_ABB"
-    #table="ABB_file_location"
+    
+    maria_usr=getenv('maria_nlp_user')
+    maria_pwd=getenv('maria_nlp_pwd')
+    maria_host="217.144.54.147"
+    database="NLP_ABB"
+    table="ABB_pdf"
+    table_url="ABB_file_location"
+
     #csvData="E:/Backup/20220506/pdf_file_location.csv"
     #toARCH="E:/Backup/20220506/MARIADB_pdf_file_location.csv"
 
 
-    #mdb=MariaDbSupport(maria_usr,maria_pwd,maria_host,database)
+
+
+    mdb=MariaDbSupport(maria_usr,maria_pwd,maria_host,database)
     
-    #mdb.connect(database)
-    #mdb.debug_mode()
+    mdb.connect(database)
+    mdb.debug_mode()
+    sel=mdb.get_selection(table,"12")
+    sel=mdb.get_fileurl(table_url,"e81ab01r1110")
+    
+    mdb.disconnect()
+    
     #mdb.upload_from_csv(table,csvData,init=True)
     #mdb.disconnect()
     

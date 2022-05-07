@@ -139,4 +139,13 @@
     - metaadatok mentése CSV-be
     - metaadatok _id kialakítása 
 
+# 20220501 19:30
+    - Eredeti fre helyen szerver config
+    - service funkciók beállítása
+
+# 20220507 13:10
+    -OTIQ server MARIADB adatbázis kialakítása
+    -upload-download rutinok kialakítása
+    -MariaDBSupport modul lialakítása
+    -Mongo vs MariaDB support funkciuók homogenizálása ! plattform és database független megoldás kell
 
