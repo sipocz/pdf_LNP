@@ -3,19 +3,50 @@ class MongoDbSupport:
     def __init__(self,connection_str:str):
         
         self._connection_str_=connection_str
-        self.dms=False  
+        self.dms=False
+        self.connected=False  
 
-    def count(self,db:str,coll:str) -> int:
-        from pymongo import MongoClient
-        client = MongoClient(self._connection_str_)
-        mydb = client[db]   #DB 
+# -----------------------------------
+
+    def count(self,coll:str) -> int:
+        mydb = self.mydb    #DB 
         col=mydb[coll]      #Collection
         return col.count_documents({})
 
+# -----------------------------------
 
+    def connect(self,db) -> None:
+        from pymongo import MongoClient
+        
+        '''
+        Adatbázis kapcsolódás
+        '''
+        if not self.connected:
+            self.client = MongoClient(self._connection_str_)
+            
+            self.mydb = self.client[db]   #DB 
+            self.connected=True
+            return
+        else:
+             print("Connected!!")
 
+# -----------------------------------
 
-    def to_csv(self,db:str,coll:str,fname:str):
+    def disconnect(self) -> None:
+        from pymongo import MongoClient
+        '''
+        zárja a kapcsolatokat
+        '''
+        if self.connected:            
+            self.client.close()
+            self.mydb=None
+            self.connected=False
+        else:
+            print("Disconnected")
+        
+# -----------------------------------
+
+    def to_csv(self,coll:str,fname:str):
         
         '''
         MONGODB adatbázisból id alapján data visszaadása
@@ -26,8 +57,7 @@ class MongoDbSupport:
         import pymongo
         import pandas as pd
     
-        client = pymongo.MongoClient(self._connection_str_)
-        mydb = client[db]   #DB 
+        mydb = self.mydb    #DB 
         col=mydb[coll]      #Collection
 
         cursor=col.find()
@@ -41,6 +71,8 @@ class MongoDbSupport:
         if self.dms:
             print("to_csv exit")
         return(col)
+
+# -----------------------------------
 
     def kill_collection(self,db:str,coll:str):
         
@@ -59,11 +91,13 @@ class MongoDbSupport:
 
         return(col)
 
+# -----------------------------------
 
     def upload_from_csv(self,db:str,coll:str,fname:str):
         
         '''
         MONGODB adatbázisba collection feltöltése fname csv-ből
+        Még nincs átírva
         '''
         if self.dms:
             print("Upload_start")
@@ -83,6 +117,8 @@ class MongoDbSupport:
             print("exit upload")
         return(col)
 
+# -----------------------------------
+
     def debug_mode(self,value:bool=True):
         '''
         Az osztályt debug üzemmódba teszi.(default=True) Több kiírás jelenik neg a kimeneten 
@@ -91,6 +127,7 @@ class MongoDbSupport:
         '''
         self.dms=value #Debug_mode_state
 
+# -----------------------------------
     
     def regenerate_from_csv(self,db:str,coll:str,fname:str):
         
@@ -107,20 +144,8 @@ class MongoDbSupport:
         col=mydb[coll]      #Collection
         #print(df.head())
         df=pd.read_csv(fname)
-        
-        
-        '''
-        if self.dms:
-            print(df.head())
-        list_of_dict=df.to_dict('records')
-        col.insert_many(list_of_dict)
-        if self.dms:
-            print("exit upload")
-        return(col)
-        '''
 
-
-
+# -----------------------------------
 
 if __name__=="__main__":
     from os import getenv
@@ -137,8 +162,22 @@ if __name__=="__main__":
 
     mc=MongoDbSupport(_mongo_conn_)
     mc.debug_mode()
-    mc.to_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"E:/Backup/20220506/pdf_file_location.csv")
-    mc.to_csv(_PDF_DB_,_META_INFO_,"E:/Backup/20220506/pdf_metadata.csv")
+    mc.connect(_PDF_DB_)
+    print(mc.count(_FILE_LOCATION_COLLECTION_))
+    mc.to_csv(_META_INFO_,"E:/Backup/20220508/Mongodb_pdf_file_location.csv")
+
+    print(mc.connected)
+    
+    mc.disconnect()
+    print(mc.connected)
+    
+    
+
+
+
+
+    #mc.to_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"E:/Backup/20220508/pdf_file_location.csv")
+    #mc.to_csv(_PDF_DB_,_META_INFO_,"E:/Backup/20220508/pdf_metadata.csv")
     #mc.kill_collection(_PDF_DB_,_FILE_LOCATION_COLLECTION_)
     #mc.upload_from_csv(_PDF_DB_,_FILE_LOCATION_COLLECTION_,"d:/Backup/20220305/pdf_file_location.csv")
     

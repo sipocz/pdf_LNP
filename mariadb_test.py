@@ -6,8 +6,6 @@ _DB_="MariaDB"
 _FILE_LOCATION_="ABB_file_location"
 _META_INFO_="ABB_pdf"
 
-
-
 #-------------------------------------
 
 if _DB_=="MariaDB":

@@ -54,7 +54,7 @@ class MariaDbSupport:
             self.cur=self.conn.cursor()
             self.connected=True
         else:
-            print("Conencted!!")
+            print("Connected!!")
 
 # -----------------------------------
 
