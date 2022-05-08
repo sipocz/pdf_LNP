@@ -5,6 +5,15 @@ class MongoDbSupport:
         self._connection_str_=connection_str
         self.dms=False  
 
+    def count(self,db:str,coll:str) -> int:
+        from pymongo import MongoClient
+        client = MongoClient(self._connection_str_)
+        mydb = client[db]   #DB 
+        col=mydb[coll]      #Collection
+        return col.count_documents({})
+
+
+
 
     def to_csv(self,db:str,coll:str,fname:str):
         

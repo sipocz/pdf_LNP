@@ -7,6 +7,12 @@ from pandas import DataFrame
 
 # %%
 class MariaDbSupport:
+    '''
+
+    MARIADB interface
+
+    '''
+
 
 # -----------------------------------
     
@@ -22,14 +28,14 @@ class MariaDbSupport:
 
 # -----------------------------------
 
-    def count(self,table):
+    def count(self,table) -> int:
         self.cur.execute("SELECT count(*) from " + table)
         o=self.cur.next()
         return o[0]
 
 # -----------------------------------
 
-    def debug_mode(self,value:bool=True):
+    def debug_mode(self,value:bool=True) -> None:
         '''
         Az osztályt debug üzemmódba teszi.(default=True) Több kiírás jelenik neg a kimeneten 
             ha bemeneti értéke False: a debug móde kikapcsolásra kerül
@@ -39,7 +45,7 @@ class MariaDbSupport:
 
 # -----------------------------------
 
-    def connect(self,db):
+    def connect(self,db) -> None:
         '''
         Adatbázis kapcsolódás
         '''
@@ -52,7 +58,7 @@ class MariaDbSupport:
 
 # -----------------------------------
 
-    def disconnect(self):
+    def disconnect(self) -> None:
         '''
         zárja a kapcsoaltokat
         '''
