@@ -22,6 +22,7 @@ if _DB_=="MariaDB":
     mdb.connect(_PDF_DB_)
     print(mdb.count(_META_INFO_))
     mdb.disconnect()
+
 elif _DB_=="MongoDB":
     _PDF_DB_="PDF_DB"
     import MongoDbSupport as db

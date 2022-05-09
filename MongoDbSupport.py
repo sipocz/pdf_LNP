@@ -147,6 +147,26 @@ class MongoDbSupport:
 
 # -----------------------------------
 
+
+    def get_selection(self,table,id):
+        '''
+        MONGODB adatbázisból id alapján data visszaadása
+        '''
+        if self.dms:
+            print(f"Mongo get selection table: {table} id: {id} ")
+
+        mydb = self.mydb          
+        col=mydb[table]         #  client[table]
+        cursor=col.find_one({"_id":id})
+        
+        if self.dms:
+            print("** get_mongo_selection_data Cursor:",cursor) #DEBUG
+        
+        return(cursor)
+
+
+
+
 if __name__=="__main__":
     from os import getenv
     _mongo_conn_=f"mongodb+srv://{getenv('mongo_usr')}:{getenv('mongo_pwd')}@cluster0.fuant.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
@@ -164,10 +184,11 @@ if __name__=="__main__":
     mc.debug_mode()
     mc.connect(_PDF_DB_)
     print(mc.count(_FILE_LOCATION_COLLECTION_))
-    mc.to_csv(_META_INFO_,"E:/Backup/20220508/Mongodb_pdf_file_location.csv")
-
+    # mc.to_csv(_META_INFO_,"E:/Backup/20220508/Mongodb_pdf_file_location.csv")
+    mc.get_selection(_FILE_LOCATION_COLLECTION_,"621d139751e606667c0905aa")
     print(mc.connected)
     
+
     mc.disconnect()
     print(mc.connected)
     

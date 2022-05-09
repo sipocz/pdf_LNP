@@ -163,7 +163,7 @@ class MariaDbSupport:
         sql_str='SELECT * from '+table+' WHERE _id = "'+id+'"'
         if self.dms:
             print(sql_str)
-        sel=self.cur.execute(sql_str)
+        self.cur.execute(sql_str)
         out=self.cur.fetchall()
         print(out)
         return(out)
