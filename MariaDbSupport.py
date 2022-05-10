@@ -72,8 +72,9 @@ class MariaDbSupport:
 # -----------------------------------
 
     def to_csv(self,table:str,fname:str):
-        import pandas as pd
         
+        from pandas import DataFrame 
+
         '''
         MARIADB adatbázis táblából adatok mentése csvbe
         '''
@@ -88,7 +89,7 @@ class MariaDbSupport:
         cols=[i[0] for i in  description]
 
 
-        df  = pd.DataFrame(self.cur)
+        df  = DataFrame(self.cur)
         df.columns=cols
         if self.dms:
             print(df.head())
@@ -105,7 +106,8 @@ class MariaDbSupport:
         '''
         MARIADB  adatbázis táblába collection feltöltése fname csv-ből
         '''
-        from  pandas import DataFrame 
+        
+        from  pandas import DataFrame,read_csv 
         
         
         
@@ -124,7 +126,7 @@ class MariaDbSupport:
                 print("Init")
 
 
-        df=pd.read_csv(fname)
+        df=read_csv(fname)
         if self.dms:
             print(df.head())
 
