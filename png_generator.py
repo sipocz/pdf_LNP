@@ -99,7 +99,7 @@ def fname_separator(fname):
     '''
     *** TASK: PNG OUTPUT
     input: fname egy fájl neve
-    return: megadott fname file könyvtára, fole neve, és kiterjesztése  
+    return: megadott fname file könyvtára, file neve, és kiterjesztése  
     '''
     import os
     temp = os.path.splitext(fname)
