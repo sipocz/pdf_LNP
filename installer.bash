@@ -24,12 +24,15 @@ unzip ABB.zip
 sudo yum install python3.8
 sudo yum install virtualenv
 
+# ubuntu
+sudo apt-get install virtualenv
+sudo apt-get install libmariadb-dev
 
 
 #create environment
 virtualenv -p /usr/bin/python3.8 /home/opc/nlp_root
 cd /home/opc/nlp_root
-source bin/activate
+cd
 
 
 cd /nlp_root
@@ -37,6 +40,7 @@ source /home/opt/nlp_root/bin/activate
 python -m pip install pymongo
 python -m pip install gensim
 python -m pip install flask
+python -m pip install mariadb
 python -m pip install requests
 # PNG generator
 python3 -m pip install --upgrade Pillow
